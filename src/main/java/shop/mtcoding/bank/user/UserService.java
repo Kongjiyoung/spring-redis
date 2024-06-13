@@ -3,12 +3,18 @@ package shop.mtcoding.bank.user;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 // 비지니스 로직 처리, 트랜잭션 처리
 @RequiredArgsConstructor
 @Service
 public class UserService {
     private final UserRepository userRepository;
+
+    public @ResponseBody String redisTest() {
+        return "redis test";
+    }
+
 
     @Transactional
     public void 회원가입(UserRequest.JoinDTO reqDTO){
